@@ -48,31 +48,6 @@ public class MainViewModel extends ViewModel {
         dolarEuro.setValue(false);
     }
 
-   /* public void hacerCambio(String vEuro,String vDolar){
-        double val;
-        double res=0;
-        try {
-            if(vEuro!=null) {
-                val = Double.parseDouble(vEuro);
-                res = val * 1.09;
-                error.setValue(false);
-                mostrarRes.setValue(res + "");
-            }
-            else if (vDolar!=null){
-                val = Double.parseDouble(vDolar);
-                res = val * 0.92;
-                error.setValue(false);
-                mostrarRes.setValue(res + "");
-            }
-            else {error.setValue(true);
-
-            }
-         }
-        catch (Exception e){
-            error.setValue(true);
-        }
-    }*/
-
     public void hacerCambio(String valor,String cambio){
         double val;
         double res=0;

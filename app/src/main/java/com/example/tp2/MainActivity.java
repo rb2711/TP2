@@ -48,7 +48,7 @@ private TextView tvResultado, tvError;
             public void onChanged(Boolean aBoolean) {
                 tvError.setEnabled(aBoolean);
             }
-            
+
         });
 
     }
@@ -61,6 +61,8 @@ private TextView tvResultado, tvError;
         tvResultado=findViewById(R.id.tvMostrarRes);
         btConvertir = findViewById(R.id.btConvertir);
         tvError=findViewById(R.id.tvError);
+        etDolar.setEnabled(false);
+        etEuro.setEnabled(false);
 
         rbEuroDolar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +72,7 @@ private TextView tvResultado, tvError;
                 etDolar.setEnabled(false);
                 etDolar.setText("");
                 etEuro.setEnabled(true);
+                tvResultado.setText("");
             }
         });
 
@@ -81,16 +84,9 @@ private TextView tvResultado, tvError;
                 etEuro.setEnabled(false);
                 etEuro.setText("");
                 etDolar.setEnabled(true);
+                tvResultado.setText("");
             }
         });
-
-       /* btConvertir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                    mv.hacerCambio(etEuro.getText().toString(),etDolar.getText().toString());
-                }
-        });*/
 
         btConvertir.setOnClickListener(new View.OnClickListener() {
             @Override
