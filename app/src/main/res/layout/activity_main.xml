@@ -102,6 +102,7 @@
         android:layout_height="wrap_content"
         android:enabled="false"
         android:textColor="#cb3234"
+        android:visibility="invisible"
         android:text="Ingrese un valor Numérico" />
 
 

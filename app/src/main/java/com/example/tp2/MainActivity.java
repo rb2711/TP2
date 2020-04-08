@@ -43,14 +43,12 @@ private TextView tvResultado, tvError;
                 tvResultado.setText(s);
             }
         });
-        mv.getError().observe(this, new Observer<Boolean>() {
+        mv.getError().observe(this, new Observer<Integer>() {
             @Override
-            public void onChanged(Boolean aBoolean) {
-                tvError.setEnabled(aBoolean);
+            public void onChanged(Integer integer) {
+                tvError.setVisibility(integer);
             }
-
         });
-
     }
 
     private void iniciarVista(){

@@ -1,5 +1,7 @@
 package com.example.tp2;
 
+import android.view.View;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -9,7 +11,7 @@ public class MainViewModel extends ViewModel {
     private MutableLiveData<String> mostrarRes;//LiveData son tipos de variables que la vista observa con observe
     private MutableLiveData<Boolean> euroDolar;
     private MutableLiveData<Boolean> dolarEuro;
-    private MutableLiveData<Boolean> error;
+    private MutableLiveData<Integer> error;
 
     public LiveData<String> getMostrarRes(){
         if (mostrarRes==null){
@@ -31,9 +33,9 @@ public class MainViewModel extends ViewModel {
         }
         return dolarEuro;
     }
-    public LiveData<Boolean> getError(){
+    public LiveData<Integer> getError(){
         if (error == null) {
-            error=new MutableLiveData<Boolean>();
+            error=new MutableLiveData<Integer>();
         }
         return error;
     }
@@ -42,10 +44,12 @@ public class MainViewModel extends ViewModel {
     public void cambiarEstadoEuroDolar(){
 
         euroDolar.setValue(false);
+        error.setValue(View.INVISIBLE);
     }
     public void cambiarEstadoDolarEuro(){
 
         dolarEuro.setValue(false);
+        error.setValue(View.INVISIBLE);
     }
 
     public void hacerCambio(String valor,String cambio){
@@ -65,9 +69,9 @@ public class MainViewModel extends ViewModel {
                 }
             }
             mostrarRes.setValue(res + "");
-            error.setValue(false);
+            error.setValue(View.INVISIBLE);
         }catch (Exception e){
-            error.setValue(true);
+            error.setValue(View.VISIBLE);
         }
     }
 }
