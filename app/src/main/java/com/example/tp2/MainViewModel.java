@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 public class MainViewModel extends ViewModel {
 
-    private MutableLiveData<String> mostrarRes;//LiveData son tipos de variables que la vistaobserva con observe
+    private MutableLiveData<String> mostrarRes;//LiveData son tipos de variables que la vista observa con observe
     private MutableLiveData<Boolean> euroDolar;
     private MutableLiveData<Boolean> dolarEuro;
     private MutableLiveData<Boolean> error;
